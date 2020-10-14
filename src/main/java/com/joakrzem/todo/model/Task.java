@@ -1,3 +1,5 @@
+package com.joakrzem.todo.model;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 

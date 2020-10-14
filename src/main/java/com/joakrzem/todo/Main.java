@@ -1,3 +1,10 @@
+package com.joakrzem.todo;
+
+import com.joakrzem.todo.model.Priority;
+import com.joakrzem.todo.model.Task;
+import com.joakrzem.todo.service.ToDoService;
+import com.joakrzem.todo.service.ToDoServiceImpl;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
@@ -58,7 +65,7 @@ public class Main {
             System.out.println("You colleted " + points + " points Good Job");
         }
         if (choice == 6) {
-            System.out.println("Change to " + modify());;
+            System.out.println("Change to " + modify());
         }
         if (choice == 7) {
             System.out.println(getTask());
@@ -230,7 +237,7 @@ public class Main {
 
         System.out.print("points: ");
         String points = scanner.nextLine();
-        if (points != "") {
+        if (!points.equals("")) {
             int pointsToSet;
             try {
                 pointsToSet = Integer.parseInt(points);
