@@ -13,7 +13,7 @@ public class Main {
     static ToDoService toDoService = new ToDoServiceImpl();
     static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void mains(String[] args) {
         Task task1 = new Task(LocalDateTime.of(2020, 10, 15, 9, 0), "home", "do washing", "do washing", Priority.LOW, 5, 1);
         toDoService.addTask(task1);
         while (true) {
