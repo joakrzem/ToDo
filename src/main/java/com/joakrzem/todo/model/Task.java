@@ -1,3 +1,5 @@
+package com.joakrzem.todo.model;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -78,7 +80,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "com.joakrzem.todo.model.Task{" +
                 "endDate=" + endDate +
                 ", category='" + category + '\'' +
                 ", description='" + description + '\'' +

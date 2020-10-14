@@ -1,3 +1,7 @@
+package com.joakrzem.todo.service;
+
+import com.joakrzem.todo.model.Priority;
+import com.joakrzem.todo.model.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +10,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ToDoTest {
+class ToDoServiceImplTest {
 
     private final static LocalDateTime END_DATE = LocalDateTime.of(2020,10,15,9,0);
     private final static String CATEGORY = "home";

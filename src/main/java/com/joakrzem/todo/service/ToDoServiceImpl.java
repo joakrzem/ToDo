@@ -1,3 +1,7 @@
+package com.joakrzem.todo.service;
+
+import com.joakrzem.todo.model.Task;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
