@@ -80,7 +80,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "com.joakrzem.todo.model.Task{" +
+        return "Task{" +
                 "endDate=" + endDate +
                 ", category='" + category + '\'' +
                 ", description='" + description + '\'' +
