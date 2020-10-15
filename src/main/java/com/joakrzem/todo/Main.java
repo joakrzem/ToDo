@@ -8,9 +8,6 @@ import com.joakrzem.todo.service.ToDoService;
 import com.joakrzem.todo.service.ToDoServiceImpl;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
     static ToDoService toDoService = new ToDoServiceImpl();
