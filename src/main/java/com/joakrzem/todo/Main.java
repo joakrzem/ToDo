@@ -7,19 +7,23 @@ import com.joakrzem.todo.service.ToDoServiceImpl;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     static ToDoService toDoService = new ToDoServiceImpl();
     static Scanner scanner = new Scanner(System.in);
+    static Random random = new Random();
 
     public static void main(String[] args) {
         Task task1 = new Task(LocalDateTime.of(2020, 10, 15, 9, 0), "home", "do washing", "do washing", Priority.LOW, 5, 1);
         toDoService.addTask(task1);
+
         while (true) {
             printMenu();
 
-            int choice = scanner.nextInt();
+            int choice = getIntFromConsole("please enter number correctly");
+
             if (choice == 9) {
                 break;
             }
@@ -45,7 +49,7 @@ public class Main {
     private static void processMenuChoice(int choice) {
         if (choice == 1) {
             Task task = getTaskFromConsole();
-
+            System.out.println(task);
             toDoService.addTask(task);
         }
         if (choice == 2) {
@@ -78,7 +82,6 @@ public class Main {
     }
 
     private static Task getTaskFromConsole() {
-        scanner.nextLine();
 
         System.out.print("name: ");
         String name = scanner.nextLine();
@@ -104,9 +107,11 @@ public class Main {
         int points = getIntFromConsole("please enter points correctly");
 
         System.out.print("id: ");
-        int id = getIntFromConsole("please enter id correctly");
+
+        int id = Math.abs(random.nextInt());
 
         return new Task(endDate, category, description, name, priority, points, id);
+
     }
 
     private static Priority getPriorityFromConsole() {
@@ -155,7 +160,6 @@ public class Main {
     }
 
     private static void removeTask() {
-        scanner.nextLine();
         System.out.print("Which tasks do you want to remove?");
         int id = getIntFromConsole("please enter id correctly");
 
@@ -163,15 +167,13 @@ public class Main {
     }
 
     private static List<Task> getForDate() {
-        scanner.nextLine();
         System.out.print("What day do want to show?");
-        LocalDateTime data = LocalDateTime.parse(scanner.nextLine());
+        LocalDateTime data = getLocalDateTimeFromConsole();
         return toDoService.tasksForDay(data);
 
     }
 
     private static void finishTask() {
-        scanner.nextLine();
         System.out.println("Which task did you finish?");
         int finishedTask = scanner.nextInt();
 
@@ -256,7 +258,6 @@ public class Main {
     }
 
     private static Task getTask() {
-        scanner.nextLine();
         System.out.println("Which task do want to get?");
         int id = scanner.nextInt();
         return toDoService.getTask(id);
