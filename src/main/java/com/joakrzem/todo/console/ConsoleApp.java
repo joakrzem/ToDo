@@ -3,6 +3,7 @@ package com.joakrzem.todo.console;
 import com.joakrzem.todo.model.Priority;
 import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.service.ToDoService;
+import com.joakrzem.todo.service.message.PointsMessageService;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,12 +12,14 @@ import java.util.Scanner;
 
 public class ConsoleApp {
     private final ToDoService toDoService;
+    private final PointsMessageService pointsMessageService;
     private final Scanner scanner = new Scanner(System.in);
     private final Random random = new Random();
     private final ConsoleAppUtils consoleAppUtils = new ConsoleAppUtils();
 
-    public ConsoleApp(ToDoService toDoService) {
+    public ConsoleApp(ToDoService toDoService, PointsMessageService pointsMessageService) {
         this.toDoService = toDoService;
+        this.pointsMessageService = pointsMessageService;
     }
 
     public void printMenu() {
@@ -53,7 +56,8 @@ public class ConsoleApp {
         }
         if (choice == 5) {
             int points = getPoints();
-            System.out.println("You colleted " + points + " points Good Job");
+            System.out.println("You colleted " + points + " points \n"
+                    + pointsMessageService.getMessage(points));
         }
         if (choice == 6) {
             System.out.println("Change to " + modify());
