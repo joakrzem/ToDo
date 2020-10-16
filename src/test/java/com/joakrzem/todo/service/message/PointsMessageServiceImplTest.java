@@ -4,14 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PointsMessageServiceImplTest {
 
     PointsMessageServiceImpl pointMessageService;
 
     @BeforeEach
-    public void setUp (){
+    public void setUp() {
         pointMessageService = new PointsMessageServiceImpl();
     }
 
@@ -21,7 +21,7 @@ class PointsMessageServiceImplTest {
             "60:Nice",
             "30:You are starting rolling",
             "10:Don't give up!"
-            }, delimiter = ':')
+    }, delimiter = ':')
     void getMessage_ShouldReturnCorrectMessageForCorrectPoints(String points, String expectedMessage) {
         assertEquals(expectedMessage, pointMessageService.getMessage(Integer.parseInt(points)));
     }

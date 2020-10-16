@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ToDoServiceImplTest {
 
-    private final static LocalDateTime END_DATE = LocalDateTime.of(2020,10,15,9,0);
+    private final static LocalDateTime END_DATE = LocalDateTime.of(2020, 10, 15, 9, 0);
     private final static String CATEGORY = "home";
     private final static String DESCRIPTION = "clean up mess";
     private final static String NAME = "cleaning up";
@@ -24,37 +24,37 @@ class ToDoServiceImplTest {
     ToDoServiceImpl toDo;
 
     @BeforeEach
-    void setUp (){
-        task = new Task(END_DATE,CATEGORY,DESCRIPTION,NAME,PRIORITY,POINTS, ID);
+    void setUp() {
+        task = new Task(END_DATE, CATEGORY, DESCRIPTION, NAME, PRIORITY, POINTS, ID);
         toDo = new ToDoServiceImpl();
         toDo.addTask(task);
     }
 
     @Test
-    void addTask_ShouldGetCorrectTasksForDay (){
+    void addTask_ShouldGetCorrectTasksForDay() {
 
         //When
         List<Task> tasksForDay = toDo.tasksForDay(END_DATE);
 
         //Then
-        assertEquals(List.of(task),tasksForDay);
+        assertEquals(List.of(task), tasksForDay);
     }
 
     @Test
-    void tasksForDay_ShouldGetEmptyListWhenThereAreNoTasksForGivenDay (){
+    void tasksForDay_ShouldGetEmptyListWhenThereAreNoTasksForGivenDay() {
 
         //Given
-        LocalDateTime differentDate = LocalDateTime.of(2020,10,20,9,0);
+        LocalDateTime differentDate = LocalDateTime.of(2020, 10, 20, 9, 0);
 
         //When
         List<Task> tasksForDay = toDo.tasksForDay(differentDate);
 
         //Then
-        assertEquals(List.of(),tasksForDay);
+        assertEquals(List.of(), tasksForDay);
     }
 
     @Test
-    void finishTasksShouldRemoveTaskFromListAndCalculatePoints (){
+    void finishTasksShouldRemoveTaskFromListAndCalculatePoints() {
 
         //When
         toDo.finishTask(ID);
@@ -65,7 +65,7 @@ class ToDoServiceImplTest {
     }
 
     @Test
-    void collectedPoints_ShouldReturnCollectedPoints (){
+    void collectedPoints_ShouldReturnCollectedPoints() {
 
         //When
         int points = toDo.collectedPoints();
@@ -75,8 +75,7 @@ class ToDoServiceImplTest {
     }
 
     @Test
-
-    void modify_ShouldModifyTaskCorrectly(){
+    void modify_ShouldModifyTaskCorrectly() {
 
         //Given
         Task newTask = new Task(END_DATE, "work", "write report", "write", PRIORITY, 20, 2);
@@ -85,12 +84,11 @@ class ToDoServiceImplTest {
         toDo.modify(newTask, ID);
 
         //Then
-        assertEquals(toDo.getTask(ID),newTask );
+        assertEquals(toDo.getTask(ID), newTask);
     }
 
     @Test
-
-    void allTasks_ShouldReturnAllTasks (){
+    void allTasks_ShouldReturnAllTasks() {
 
         //When
         List<Task> result = toDo.allTasks();
@@ -99,9 +97,6 @@ class ToDoServiceImplTest {
         assertEquals(List.of(task), result);
 
     }
-
-
-
 
 
 }
