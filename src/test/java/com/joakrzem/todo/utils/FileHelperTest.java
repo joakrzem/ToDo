@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FileHelperTest {
     // Jak podasz nazwe pliku co nie istnieje ma podac pusta liste
@@ -15,12 +15,12 @@ class FileHelperTest {
     FileHelper fileHelper;
 
     @BeforeEach
-    void setUp (){
+    void setUp() {
         fileHelper = new FileHelper();
     }
 
     @Test
-    void readFileLines_ShouldReturnEmptyList (){
+    void readFileLines_ShouldReturnEmptyList() {
         //When
         List<String> result = fileHelper.readFileLines("not-existing.txt");
 

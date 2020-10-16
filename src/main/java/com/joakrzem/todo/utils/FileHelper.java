@@ -19,14 +19,14 @@ public class FileHelper {
         return null;
     }
 
-    public List<String> readFileLines(String name){
+    public List<String> readFileLines(String name) {
         String file = readFile(name);
-        if (file == null){
+        if (file == null) {
             return List.of();
         }
 
         return Arrays.stream(file.split("\n"))
-                .map(line -> line.replace("\n", "").replace("\r",""))
+                .map(line -> line.replace("\n", "").replace("\r", ""))
                 .collect(Collectors.toList());
     }
 
