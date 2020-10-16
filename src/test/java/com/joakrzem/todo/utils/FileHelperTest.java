@@ -8,10 +8,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FileHelperTest {
-    // Jak podasz nazwe pliku co nie istnieje ma podac pusta liste
-    // Sprawdza czy jest podzielone na linijki
-    //czy lista ma dlugosc 4
-    //czy pod 0 jest linie 1 (wszystkie)
     FileHelper fileHelper;
 
     @BeforeEach
