@@ -8,7 +8,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FileHelper {
-    public String readFile(String name) {
+    private FileHelper() {
+
+    }
+
+    public static String readFile(String name) {
         InputStream is = FileHelper.class.getClassLoader().getResourceAsStream(name);
 
         if (is != null) {
@@ -19,7 +23,7 @@ public class FileHelper {
         return null;
     }
 
-    public List<String> readFileLines(String name) {
+    public static List<String> readFileLines(String name) {
         String file = readFile(name);
         if (file == null) {
             return List.of();
