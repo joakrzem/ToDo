@@ -81,11 +81,12 @@ public class ConsoleApp {
         }
         if (choice == 8) {
             List<Task> allTask = showAllTasks();
-            if (allTask.size() == 0){
+            if (allTask.size() == 0) {
                 System.out.println("There are no tasks. Add some");
-            }else {
-            allTask.forEach(System.out::println);
-        }}
+            } else {
+                allTask.forEach(System.out::println);
+            }
+        }
 
     }
 
@@ -149,7 +150,7 @@ public class ConsoleApp {
         if (toDoService.getTask(finishedTask) != null) {
 
             System.out.println("Congratulation you have already get " + toDoService.finishTask(finishedTask) + " points");
-        }else {
+        } else {
             System.out.println("Task which has this number doesn't exist");
         }
     }
