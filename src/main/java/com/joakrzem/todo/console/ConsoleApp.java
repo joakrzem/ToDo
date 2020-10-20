@@ -44,11 +44,15 @@ public class ConsoleApp {
         }
         if (choice == 2) {
             removeTask();
+
         }
         if (choice == 3) {
             List<Task> forDate = getForDate();
-            forDate.forEach(System.out::println);
-
+            if (forDate.size() == 0) {
+                System.out.println("There are no tasks for this date");
+            } else {
+                forDate.forEach(System.out::println);
+            }
         }
         if (choice == 4) {
             finishTask();
@@ -60,14 +64,28 @@ public class ConsoleApp {
                     + pointsMessageService.getMessage(points));
         }
         if (choice == 6) {
-            System.out.println("Change to " + modify());
+            Task possiblyModified = modify();
+            if (possiblyModified != null) {
+                System.out.println("Change to " + possiblyModified);
+            }
+
         }
         if (choice == 7) {
-            System.out.println(getTask());
+            Task possibleTask = getTask();
+
+            if (possibleTask != null) {
+                System.out.println(possibleTask);
+            } else {
+                System.out.println("Task which has this number doesn't exist");
+            }
         }
         if (choice == 8) {
             List<Task> allTask = showAllTasks();
-            allTask.forEach(System.out::println);
+            if (allTask.size() == 0) {
+                System.out.println("There are no tasks. Add some");
+            } else {
+                allTask.forEach(System.out::println);
+            }
         }
 
     }
@@ -110,7 +128,13 @@ public class ConsoleApp {
         System.out.print("Which tasks do you want to remove?");
         int id = consoleAppUtils.getIntFromConsole("please enter id correctly");
 
+        if (toDoService.getTask(id) == null) {
+            System.out.println("Task which has this number doesn't exist");
+            return;
+        }
+
         toDoService.removeTask(id);
+        System.out.println("Successfully removed");
     }
 
     private List<Task> getForDate() {
@@ -123,8 +147,12 @@ public class ConsoleApp {
     private void finishTask() {
         System.out.println("Which task did you finish?");
         int finishedTask = scanner.nextInt();
+        if (toDoService.getTask(finishedTask) != null) {
 
-        System.out.println("Congratulation you have already get " + toDoService.finishTask(finishedTask) + " points");
+            System.out.println("Congratulation you have already get " + toDoService.finishTask(finishedTask) + " points");
+        } else {
+            System.out.println("Task which has this number doesn't exist");
+        }
     }
 
     private int getPoints() {
@@ -138,6 +166,10 @@ public class ConsoleApp {
         scanner.nextLine();
 
         Task toModify = toDoService.getTask(id);
+        if (toModify == null) {
+            System.out.println("Task which has this number doesn't exist");
+            return null;
+        }
 
         System.out.print("name: ");
         String name = scanner.nextLine();
@@ -200,6 +232,7 @@ public class ConsoleApp {
 
         toDoService.modify(toModify, id);
 
+        System.out.println("Successfully modified");
         return toModify;
     }
 
@@ -207,7 +240,6 @@ public class ConsoleApp {
         System.out.println("Which task do want to get?");
         int id = scanner.nextInt();
         return toDoService.getTask(id);
-
     }
 
     private List<Task> showAllTasks() {
