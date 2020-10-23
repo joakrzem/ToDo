@@ -61,6 +61,7 @@ public class ActionAddTask implements Action {
 
         int id = Math.abs(random.nextInt());
 
+
         return new Task(endDate, category, description, name, priority, points, id);
     }
 }

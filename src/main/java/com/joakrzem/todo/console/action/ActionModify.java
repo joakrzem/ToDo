@@ -2,6 +2,7 @@ package com.joakrzem.todo.console.action;
 
 import com.joakrzem.todo.console.ConsoleAppUtils;
 import com.joakrzem.todo.model.Priority;
+import com.joakrzem.todo.model.Status;
 import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.service.ToDoService;
 
@@ -41,7 +42,10 @@ public class ActionModify implements Action {
             System.out.println("Task which has this number doesn't exist");
             return null;
         }
-
+        if (toModify.getStatus() == Status.FINISHED) {
+            System.out.println("You can't modify finished task");
+            return null;
+        }
         System.out.print("name: ");
         String name = scanner.nextLine();
         if (!name.equals("")) {
@@ -106,6 +110,8 @@ public class ActionModify implements Action {
         System.out.println("Successfully modified");
         return toModify;
     }
-
 }
+
+
+
 

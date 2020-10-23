@@ -1,5 +1,6 @@
 package com.joakrzem.todo.service;
 
+import com.joakrzem.todo.model.Status;
 import com.joakrzem.todo.model.Task;
 
 import java.time.LocalDateTime;
@@ -26,7 +27,7 @@ public class ToDoServiceImpl implements ToDoService {
     @Override
     public int finishTask(int id) {
         collectedPoints = collectedPoints + tasks.get(id).getPoints();
-        tasks.remove(id);
+        tasks.get(id).setStatus(Status.FINISHED);
         return collectedPoints;
     }
 

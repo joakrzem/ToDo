@@ -24,7 +24,7 @@ public class ActionGetTask implements Action {
         Task possibleTask = getTask();
 
         if (possibleTask != null) {
-            System.out.println(possibleTask);
+            System.out.println(possibleTask.getStatus().toString() + " " + possibleTask);
         } else {
             System.out.println("Task which has this number doesn't exist");
         }

@@ -1,6 +1,7 @@
 package com.joakrzem.todo.service;
 
 import com.joakrzem.todo.model.Priority;
+import com.joakrzem.todo.model.Status;
 import com.joakrzem.todo.model.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,14 +55,15 @@ class ToDoServiceImplTest {
     }
 
     @Test
-    void finishTasksShouldRemoveTaskFromListAndCalculatePoints() {
+    void finishTasks_ShouldMarkTaskAsFinishedAndCalculatePoints() {
 
         //When
         toDo.finishTask(ID);
 
         //Then
-        assertEquals(List.of(), toDo.tasksForDay(END_DATE));
+        assertEquals(List.of(task), toDo.tasksForDay(END_DATE));
         assertEquals(POINTS, toDo.collectedPoints());
+        assertEquals(Status.FINISHED, toDo.getTask(ID).getStatus());
     }
 
     @Test
@@ -97,6 +99,7 @@ class ToDoServiceImplTest {
         assertEquals(List.of(task), result);
 
     }
+
 
 
 }
