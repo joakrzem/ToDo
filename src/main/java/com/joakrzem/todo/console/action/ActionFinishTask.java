@@ -1,5 +1,7 @@
 package com.joakrzem.todo.console.action;
 
+import com.joakrzem.todo.model.Status;
+import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.service.ToDoService;
 
 import java.util.Scanner;
@@ -26,9 +28,14 @@ public class ActionFinishTask implements Action {
     private void finishTask() {
         System.out.println("Which task did you finish?");
         int finishedTask = scanner.nextInt();
-        if (toDoService.getTask(finishedTask) != null) {
+        Task taskToFinish = toDoService.getTask(finishedTask);
 
-            System.out.println("Congratulation you have already get " + toDoService.finishTask(finishedTask) + " points");
+        if (taskToFinish != null) {
+            if (taskToFinish.getStatus() != Status.FINISHED) {
+                System.out.println("Congratulation you have already get " + toDoService.finishTask(finishedTask) + " points");
+            } else {
+                System.out.println("This task is already finished");
+            }
         } else {
             System.out.println("Task which has this number doesn't exist");
         }

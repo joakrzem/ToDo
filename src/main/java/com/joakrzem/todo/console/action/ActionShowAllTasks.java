@@ -1,6 +1,9 @@
 package com.joakrzem.todo.console.action;
 
+import com.joakrzem.todo.businesslogic.SplitTasksByStatus;
+import com.joakrzem.todo.console.action.show.ShowTasksByStatus;
 import com.joakrzem.todo.model.Task;
+import com.joakrzem.todo.model.TasksByStatus;
 import com.joakrzem.todo.service.ToDoService;
 
 import java.util.List;
@@ -8,9 +11,11 @@ import java.util.List;
 public class ActionShowAllTasks implements Action {
 
     private final ToDoService toDoService;
+    private final SplitTasksByStatus splitTasksByStatus;
 
-    public ActionShowAllTasks(ToDoService toDoService) {
+    public ActionShowAllTasks(ToDoService toDoService, SplitTasksByStatus splitTasksByStatus) {
         this.toDoService = toDoService;
+        this.splitTasksByStatus = splitTasksByStatus;
     }
 
     @Override
@@ -20,15 +25,17 @@ public class ActionShowAllTasks implements Action {
 
     @Override
     public void execute() {
-        List<Task> allTask = showAllTasks();
+        List<Task> allTask = getAllTasks();
         if (allTask.size() == 0) {
             System.out.println("There are no tasks. Add some");
         } else {
-            allTask.forEach(System.out::println);
+            TasksByStatus tasksByStatus = splitTasksByStatus.split(allTask);
+
+            ShowTasksByStatus.show(tasksByStatus);
         }
     }
 
-    private List<Task> showAllTasks() {
+    private List<Task> getAllTasks() {
         return toDoService.allTasks();
     }
 }

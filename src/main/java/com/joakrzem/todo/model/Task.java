@@ -11,6 +11,7 @@ public class Task {
     private Priority priority;
     private int points;
     private int id;
+    private Status status;
 
     public Task(LocalDateTime endDate, String category, String description, String name, Priority priority, int points, int id) {
         this.endDate = endDate;
@@ -20,6 +21,7 @@ public class Task {
         this.priority = priority;
         this.points = points;
         this.id = id;
+        this.status = Status.ACTIVE;
     }
 
     public int getId() {
@@ -78,6 +80,14 @@ public class Task {
         this.points = points;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
@@ -88,8 +98,10 @@ public class Task {
                 ", priority=" + priority +
                 ", points=" + points +
                 ", id=" + id +
+                ", status=" + status +
                 '}';
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -102,11 +114,12 @@ public class Task {
                 Objects.equals(category, task.category) &&
                 Objects.equals(description, task.description) &&
                 Objects.equals(name, task.name) &&
-                priority == task.priority;
+                priority == task.priority &&
+                status == task.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endDate, category, description, name, points, id);
+        return Objects.hash(endDate, category, description, name, priority, points, id, status);
     }
 }
