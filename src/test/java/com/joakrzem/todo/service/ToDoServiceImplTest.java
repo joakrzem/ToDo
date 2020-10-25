@@ -99,7 +99,4 @@ class ToDoServiceImplTest {
         assertEquals(List.of(task), result);
 
     }
-
-
-
 }
