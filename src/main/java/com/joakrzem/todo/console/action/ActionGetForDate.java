@@ -1,21 +1,24 @@
 package com.joakrzem.todo.console.action;
 
+import com.joakrzem.todo.businesslogic.SplitTasksByStatus;
 import com.joakrzem.todo.console.ConsoleAppUtils;
-import com.joakrzem.todo.model.Status;
+import com.joakrzem.todo.console.action.show.ShowTasksByStatus;
 import com.joakrzem.todo.model.Task;
+import com.joakrzem.todo.model.TasksByStatus;
 import com.joakrzem.todo.service.ToDoService;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ActionGetForDate implements Action {
 
     private final ToDoService toDoService;
+    private final SplitTasksByStatus splitTasksByStatus;
     private final ConsoleAppUtils consoleAppUtils = new ConsoleAppUtils();
 
-    public ActionGetForDate(ToDoService toDoService) {
+    public ActionGetForDate(ToDoService toDoService, SplitTasksByStatus splitTasksByStatus) {
         this.toDoService = toDoService;
+        this.splitTasksByStatus = splitTasksByStatus;
     }
 
     @Override
@@ -37,26 +40,8 @@ public class ActionGetForDate implements Action {
             return;
         }
 
-        List<Task> activeTasks = new ArrayList<>();
-        List<Task> finishedTasks = new ArrayList<>();
-        List<Task> inProgressTasks = new ArrayList<>();
-        List<Task> cancelledTasks = new ArrayList<>();
-        for (Task task : allTasks) {
-            if (task.getStatus() == Status.ACTIVE) {
-                activeTasks.add(task);
-            } else {
-                finishedTasks.add(task);
-            }
-        }
+        TasksByStatus tasksByStatus = splitTasksByStatus.split(allTasks);
 
-        System.out.println("Active tasks");
-        for (Task activeTask : activeTasks) {
-            System.out.println(activeTask);
-        }
-
-        System.out.println("Finished tasks");
-        for (Task finishedTask : finishedTasks) {
-            System.out.println(finishedTask);
-        }
+        ShowTasksByStatus.show(tasksByStatus);
     }
 }

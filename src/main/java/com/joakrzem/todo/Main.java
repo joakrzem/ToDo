@@ -1,5 +1,6 @@
 package com.joakrzem.todo;
 
+import com.joakrzem.todo.businesslogic.SplitTasksByStatus;
 import com.joakrzem.todo.console.ConsoleApp;
 import com.joakrzem.todo.model.Priority;
 import com.joakrzem.todo.model.Task;
@@ -15,7 +16,7 @@ import java.util.Scanner;
 public class Main {
     static PointsMessageService pointsMessageService = new PointsMessageServiceImpl();
     static ToDoService toDoService = new ToDoServiceImpl();
-    static ConsoleApp consoleApp = new ConsoleApp(toDoService, pointsMessageService);
+    static ConsoleApp consoleApp = new ConsoleApp(toDoService, pointsMessageService, new SplitTasksByStatus());
     static ExitMessageServiceImpl exitMessageService = new ExitMessageServiceImpl("exit-messages.txt");
 
     public static void main(String[] args) {
