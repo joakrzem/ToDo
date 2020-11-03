@@ -7,6 +7,7 @@ import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.service.ToDoService;
 import com.joakrzem.todo.service.ToDoServiceImpl;
 import com.joakrzem.todo.service.message.ExitMessageServiceImpl;
+import com.joakrzem.todo.service.message.MessageTranslationServiceFile;
 import com.joakrzem.todo.service.message.PointsMessageService;
 import com.joakrzem.todo.service.message.PointsMessageServiceImpl;
 
@@ -16,7 +17,7 @@ import java.util.Scanner;
 public class Main {
     static PointsMessageService pointsMessageService = new PointsMessageServiceImpl();
     static ToDoService toDoService = new ToDoServiceImpl();
-    static ConsoleApp consoleApp = new ConsoleApp(toDoService, pointsMessageService, new SplitTasksByStatus());
+    static ConsoleApp consoleApp = new ConsoleApp(toDoService, pointsMessageService, new SplitTasksByStatus(), new MessageTranslationServiceFile());
     static ExitMessageServiceImpl exitMessageService = new ExitMessageServiceImpl("exit-messages.txt");
 
     public static void main(String[] args) {

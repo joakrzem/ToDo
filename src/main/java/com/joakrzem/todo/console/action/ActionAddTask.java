@@ -4,6 +4,7 @@ import com.joakrzem.todo.console.ConsoleAppUtils;
 import com.joakrzem.todo.model.Priority;
 import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.service.ToDoService;
+import com.joakrzem.todo.service.message.MessageTranslationService;
 
 import java.time.LocalDateTime;
 import java.util.Random;
@@ -11,18 +12,22 @@ import java.util.Scanner;
 
 public class ActionAddTask implements Action {
     private final ToDoService toDoService;
+    private final MessageTranslationService messageTranslationService;
 
     private final Scanner scanner = new Scanner(System.in);
     private final Random random = new Random();
-    private final ConsoleAppUtils consoleAppUtils = new ConsoleAppUtils();
+    private final ConsoleAppUtils consoleAppUtils;
 
-    public ActionAddTask(ToDoService toDoService) {
+    public ActionAddTask(ToDoService toDoService, MessageTranslationService messageTranslationService) {
         this.toDoService = toDoService;
+        this.messageTranslationService = messageTranslationService;
+
+        consoleAppUtils = new ConsoleAppUtils(messageTranslationService);
     }
 
     @Override
     public String description() {
-        return "Add task";
+        return messageTranslationService.getMessage("descriptionAddTask");
     }
 
     @Override
@@ -34,30 +39,29 @@ public class ActionAddTask implements Action {
 
     private Task getTaskFromConsole() {
 
-        System.out.print("name: ");
+        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleName"));
         String name = scanner.nextLine();
 
-        System.out.print("category: ");
+        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleCategory"));
         String category = scanner.nextLine();
 
-        System.out.print("description: ");
+        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleDescription"));
         String description = scanner.nextLine();
 
-        System.out.print("endDate: ");
-
+        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleEndDate"));
         LocalDateTime endDate;
         endDate = consoleAppUtils.getLocalDateTimeFromConsole();
 
-        System.out.print("priority: ");
+        System.out.print(messageTranslationService.getMessage("getTaskFromConsolePriority"));
         Priority priority;
 
         priority = consoleAppUtils.getPriorityFromConsole();
 
 
-        System.out.print("points: ");
-        int points = consoleAppUtils.getIntFromConsole("please enter points correctly");
+        System.out.print(messageTranslationService.getMessage("getTaskFromConsolePoints"));
+        int points = consoleAppUtils.getIntFromConsole(messageTranslationService.getMessage("modifyPointCorrectly"));
 
-        System.out.print("id: ");
+        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleID"));
 
         int id = Math.abs(random.nextInt());
 

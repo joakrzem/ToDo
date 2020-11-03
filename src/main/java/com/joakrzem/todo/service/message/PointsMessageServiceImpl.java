@@ -3,25 +3,26 @@ package com.joakrzem.todo.service.message;
 
 public class PointsMessageServiceImpl implements PointsMessageService {
 
+    MessageTranslationService messageTranslationService = new MessageTranslationServiceFile();
 
     @Override
     public String getMessage(int points) {
         if (points >= 201) {
-            return "You are really task master!";
+            return messageTranslationService.getMessage("pointsMessageServiceImpl1");
         }
 
         if (points >= 101) {
-            return "Good luck, keep going!";
+            return messageTranslationService.getMessage("pointsMessageServiceImpl2");
         }
 
         if (points >= 51) {
-            return "Nice";
+            return messageTranslationService.getMessage("pointsMessageServiceImpl3");
         }
 
         if (points >= 21) {
-            return "You are starting rolling";
+            return messageTranslationService.getMessage("pointsMessageServiceImpl4");
         }
 
-        return "Don't give up!";
+        return messageTranslationService.getMessage("pointsMessageServiceImpl5");
     }
 }
