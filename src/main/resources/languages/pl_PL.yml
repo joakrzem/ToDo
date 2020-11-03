@@ -61,8 +61,8 @@ showAllTaskShowTaskByStatusCanclled: Odwołane
 showAllTaskShowTaskByStatusInProgress: W trakcie
 showAllTaskShowTaskByStatusFinished: Ukończone
 
-pointsMessageServiceImpl1: Jesteś prawdziwym mistrzem !
-pointsMessageServiceImpl2: Powodzenia, kontynuuj
-pointsMessageServiceImpl3: Fajnie
-pointsMessageServiceImpl4: Zaczynasz działać
-pointsMessageServiceImpl5: Nie poddawaj się
+pointsMessageServiceImplMoreThan200Points: Jesteś prawdziwym mistrzem !
+pointsMessageServiceImplMoreThan100Points: Powodzenia, kontynuuj
+pointsMessageServiceImplMoreThan50Points: Fajnie
+pointsMessageServiceImplMoreThan20Points: Zaczynasz działać
+pointsMessageServiceImplLessThan20Points: Nie poddawaj się

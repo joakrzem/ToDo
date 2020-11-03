@@ -54,15 +54,15 @@ actionSetLanguagePolish: 2.pl_PL
 actionSetLanguageExecuteToEnglish: Change language to en_US
 actionSetLanguageExecuteToPolish: Change language to pl_PL
 
-consoleAppExit: 0. Exit
+consoleAppExit: Exit
 
 showAllTaskShowTaskByStatusActive: Active
 showAllTaskShowTaskByStatusCanclled: Cancelled
 showAllTaskShowTaskByStatusInProgress: In progress
 showAllTaskShowTaskByStatusFinished: Fnished
 
-pointsMessageServiceImpl1: You are really task master!
-pointsMessageServiceImpl2: Good luck, keep going
-pointsMessageServiceImpl3: Nice
-pointsMessageServiceImpl4: You are starting rolling
-pointsMessageServiceImpl5: Don't give up
+pointsMessageServiceImplMoreThan200Points: You are really task master!
+pointsMessageServiceImplMoreThan100Points: Good luck, keep going
+pointsMessageServiceImplMoreThan50Points: Nice
+pointsMessageServiceImplMoreThan20Points: You are starting rolling
+pointsMessageServiceImplLessThan20Points: Don't give up
