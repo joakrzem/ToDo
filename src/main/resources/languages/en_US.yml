@@ -1,0 +1,68 @@
+descriptionAddTask: Add new task
+name: "name:"
+category: "category: "
+description: "description: "
+endDate: "endDate: "
+priority: "priority: "
+points: "points: "
+id: "id: "
+
+descriptionFinishTask: Finish task
+finishTaskWhichTask: Which task did you finish?
+finishTaskPoints: Congratulation you have already get
+finishTaskWhichTaskFinish: This task is already finished
+finishTaskGetPoints: points
+taskDoesntExist: Task which has this number doesn't exist
+
+descriptionGetForDate: Get for date
+getForDateWhatDay: What day do want to show?
+getForDateThereAreNoTask: There are no tasks for this date
+
+descriptionGetPoints: Get points
+getPointsCollectedPoints: You colleted %d points
+
+descriptionGetTask: Get task
+getTaskWhichTask: Which task do want to get?
+
+descriptionModify: Modify
+modifyChangeTo: Change to
+modifyWhichTask: Which task do you want to modify?
+modifyCantModify: You can't modify finished task
+modifyDateCorrectly: Please enter end date correctly
+modifyPointCorrectly: Please enter points correctly
+modifySuccessfullyModified: Successfully modified
+
+descriptionRemoveTask: Remove task
+removeTaskWhich: Which tasks do you want to remove?
+removeTaskIdCorrectly: Please enter id correctly
+removeTaskSuccessfullRemoved: Successfully removed
+
+printMenuWhatToDo: What do you want to do?
+executeActionActionDoesntExist: Action which has this number doesn't exist
+descriptionShowAllTask: Show all task
+addSomeTask: There are no tasks. Add some
+executePriorityCorrectly: Please enter priority correctly
+
+showTaskByStatusShowActiveTasks: Active tasks
+showTaskByStatusShowCancelledTasks: Cancelled task
+showTaskByStatusFinishedTasks: Finished tasks
+showTaskByStatusShowInProgressTasks: In progress tasks
+
+actionSetLanguageDescription: Which language do you want?
+actionSetLanguageEnglish: 1.en_US
+actionSetLanguagePolish: 2.pl_PL
+actionSetLanguageExecuteToEnglish: Change language to en_US
+actionSetLanguageExecuteToPolish: Change language to pl_PL
+
+appExit: Exit
+
+showAllTaskShowTaskByStatusActive: Active
+showAllTaskShowTaskByStatusCanclled: Cancelled
+showAllTaskShowTaskByStatusInProgress: In progress
+showAllTaskShowTaskByStatusFinished: Fnished
+
+moreThan200PointsMessage: You are really task master!
+moreThan100PointsMessage: Good luck, keep going
+moreThan50PointsMessage: Nice
+moreThan20PointsMessage: You are starting rolling
+lessThan20PointsMessage: Don't give up

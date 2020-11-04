@@ -1,12 +1,18 @@
 package com.joakrzem.todo.console;
 
 import com.joakrzem.todo.model.Priority;
+import com.joakrzem.todo.service.message.MessageTranslationService;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class ConsoleAppUtils {
     private final Scanner scanner = new Scanner(System.in);
+    private final MessageTranslationService messageTranslationService;
+
+    public ConsoleAppUtils(MessageTranslationService messageTranslationService) {
+        this.messageTranslationService = messageTranslationService;
+    }
 
     public Priority getPriorityFromConsole() {
         Priority priority;
@@ -16,7 +22,7 @@ public class ConsoleAppUtils {
                 priority = Priority.valueOf(priorityLine.toUpperCase());
                 break;
             } catch (Exception ignored) {
-                System.out.println(" please enter priority correctly");
+                System.out.println(messageTranslationService.getMessage("executePriorityCorrectly"));
             }
         }
         return priority;
@@ -46,7 +52,7 @@ public class ConsoleAppUtils {
                 endDate = LocalDateTime.parse(date);
                 break;
             } catch (Exception ignored) {
-                System.out.println("please enter date correctly");
+                System.out.println(messageTranslationService.getMessage("modifyDateCorrectly"));
             }
         }
         return endDate;

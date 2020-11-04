@@ -6,17 +6,16 @@ import com.joakrzem.todo.model.Priority;
 import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.service.ToDoService;
 import com.joakrzem.todo.service.ToDoServiceImpl;
-import com.joakrzem.todo.service.message.ExitMessageServiceImpl;
-import com.joakrzem.todo.service.message.PointsMessageService;
-import com.joakrzem.todo.service.message.PointsMessageServiceImpl;
+import com.joakrzem.todo.service.message.*;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Main {
-    static PointsMessageService pointsMessageService = new PointsMessageServiceImpl();
+    static MessageTranslationService messageTranslationService = new MessageTranslationServiceFile();
+    static PointsMessageService pointsMessageService = new PointsMessageServiceImpl(messageTranslationService);
     static ToDoService toDoService = new ToDoServiceImpl();
-    static ConsoleApp consoleApp = new ConsoleApp(toDoService, pointsMessageService, new SplitTasksByStatus());
+    static ConsoleApp consoleApp = new ConsoleApp(toDoService, pointsMessageService, new SplitTasksByStatus(), messageTranslationService);
     static ExitMessageServiceImpl exitMessageService = new ExitMessageServiceImpl("exit-messages.txt");
 
     public static void main(String[] args) {

@@ -3,6 +3,7 @@ package com.joakrzem.todo.console.action;
 import com.joakrzem.todo.model.Status;
 import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.service.ToDoService;
+import com.joakrzem.todo.service.message.MessageTranslationService;
 
 import java.util.Scanner;
 
@@ -10,14 +11,16 @@ public class ActionFinishTask implements Action {
 
     private final ToDoService toDoService;
     private final Scanner scanner = new Scanner(System.in);
+    private final MessageTranslationService messageTranslationService;
 
-    public ActionFinishTask(ToDoService toDoService) {
+    public ActionFinishTask(ToDoService toDoService, MessageTranslationService messageTranslationService) {
         this.toDoService = toDoService;
+        this.messageTranslationService = messageTranslationService;
     }
 
     @Override
     public String description() {
-        return "Finish task";
+        return messageTranslationService.getMessage("descriptionFinishTask");
     }
 
     @Override
@@ -26,18 +29,18 @@ public class ActionFinishTask implements Action {
     }
 
     private void finishTask() {
-        System.out.println("Which task did you finish?");
+        System.out.println(messageTranslationService.getMessage("finishTaskWhichTask"));
         int finishedTask = scanner.nextInt();
         Task taskToFinish = toDoService.getTask(finishedTask);
 
         if (taskToFinish != null) {
             if (taskToFinish.getStatus() != Status.FINISHED) {
-                System.out.println("Congratulation you have already get " + toDoService.finishTask(finishedTask) + " points");
+                System.out.println(messageTranslationService.getMessage("finishTaskPoints") + " " + toDoService.finishTask(finishedTask) + " " + messageTranslationService.getMessage("finishTaskGetPoints"));
             } else {
-                System.out.println("This task is already finished");
+                System.out.println(messageTranslationService.getMessage("finishTaskWhichTaskFinish"));
             }
         } else {
-            System.out.println("Task which has this number doesn't exist");
+            System.out.println(messageTranslationService.getMessage("taskDoesntExist"));
         }
     }
 }

@@ -1,0 +1,68 @@
+descriptionAddTask: Dodaj nowe zadanie
+name: "nazwa: "
+category: "kategoria: "
+description: "opis: "
+endDate: "data zakończenia: "
+priority: "priorytet: "
+points: "punkty: "
+id: "numer: "
+
+descriptionFinishTask: Zakończ zadanie
+finishTaskWhichTask: Które zadanie ukończyłeś/łaś?
+finishTaskPoints: Gratulacje, na tem moment masz
+finishTaskWhichTaskFinish: To zadanie zostało już ukończone
+finishTaskGetPoints: punktów
+taskDoesntExist: Zadanie o tym numerze nie istnieje
+
+descriptionGetForDate: Zadania dla daty
+getForDateWhatDay: Który dzień pokazać?
+getForDateThereAreNoTask: Nie ma zadań dla tej daty
+
+descriptionGetPoints: Zodobyte punkty
+getPointsCollectedPoints: Zdobyłeś/łaś %d punktów
+
+descriptionGetTask: Pokaż zadanie
+getTaskWhichTask: Które zadanie pokazać?
+
+descriptionModify: Modyfikuj zadanie
+modifyChangeTo: Zmień na
+modifyWhichTask: Które zadanie chcesz zmodyfikować?
+modifyCantModify: Nie możesz modyfikować ukończonego zadania
+modifyDateCorrectly: Proszę wpisać końcową datę zadania poprawnie
+modifyPointCorrectly: Proszę wpisać ilość punktów zadania poprawnie
+modifySuccessfullyModified: Poprawnie zmodyfikowane
+
+descriptionRemoveTask: Usuń zadanie
+removeTaskWhich: Które zadanie chcesz usunąć?
+removeTaskIdCorrectly: Proszę wpisać numer poprawnie
+removeTaskSuccessfullRemoved: Poprawnie usunięte
+
+printMenuWhatToDo: Co chcesz zrobić?
+executeActionActionDoesntExist: Akcja o tym numerze nie istnieje
+descriptionShowAllTask: Pokaż wszystkie zadania
+addSomeTask: Nie ma żadnych zadań. Dodaj jakieś
+executePriorityCorrectly: Proszę wpisz priorytet poprawnie
+
+showTaskByStatusShowActiveTasks: Aktywne zadania
+showTaskByStatusShowCancelledTasks: Odwołane zadania
+showTaskByStatusFinishedTasks: Ukończone zadania
+showTaskByStatusShowInProgressTasks: Zadania w trakcie wykonywania
+
+actionSetLanguageDescription: Który język chcesz ustawić?
+actionSetLanguageEnglish: 1.en_US
+actionSetLanguagePolish: 2.pl_PL
+actionSetLanguageExecuteToEnglish: Change language to en_US
+actionSetLanguageExecuteToPolish: Zmieniono język na pl_PL
+
+appExit: Wyjście
+
+showAllTaskShowTaskByStatusActive: Aktywne
+showAllTaskShowTaskByStatusCanclled: Anulowane
+showAllTaskShowTaskByStatusInProgress: W trakcie
+showAllTaskShowTaskByStatusFinished: Ukończone
+
+moreThan200Points: Jesteś prawdziwym mistrzem !
+moreThan100Points: Powodzenia, kontynuuj
+moreThan50Points: Fajnie
+moreThan20Points: Zaczynasz działać
+lessThan20Points: Nie poddawaj się

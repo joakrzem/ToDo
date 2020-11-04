@@ -2,26 +2,31 @@ package com.joakrzem.todo.console.action.show;
 
 import com.joakrzem.todo.model.Task;
 import com.joakrzem.todo.model.TasksByStatus;
+import com.joakrzem.todo.service.message.MessageTranslationService;
+
+import java.util.List;
 
 public class ShowTasksByStatus {
+    public ShowTasksByStatus(MessageTranslationService messageTranslationService) {
+        this.messageTranslationService = messageTranslationService;
+    }
 
-    public static void show(TasksByStatus tasksByStatus) {
-        System.out.println("Active tasks");
-        for (Task activeTask : tasksByStatus.getActiveTasks()) {
-            System.out.println(activeTask);
-        }
+    private final MessageTranslationService messageTranslationService;
 
-        System.out.println("Finished tasks");
-        for (Task finishedTask : tasksByStatus.getFinishedTasks()) {
-            System.out.println(finishedTask);
-        }
-        System.out.println("Cancelled tasks");
-        for (Task finishedTask : tasksByStatus.getCancelledTasks()) {
-            System.out.println(finishedTask);
-        }
-        System.out.println("In progress tasks");
-        for (Task finishedTask : tasksByStatus.getInProgressTasks()) {
-            System.out.println(finishedTask);
+    public void show(TasksByStatus tasksByStatus) {
+        showTasksList(tasksByStatus.getActiveTasks(), messageTranslationService.getMessage("showAllTaskShowTaskByStatusActive"));
+        showTasksList(tasksByStatus.getCancelledTasks(), messageTranslationService.getMessage("showAllTaskShowTaskByStatusCancelled"));
+        showTasksList(tasksByStatus.getFinishedTasks(), messageTranslationService.getMessage("showAllTaskShowTaskByStatusFinished"));
+        showTasksList(tasksByStatus.getInProgressTasks(), messageTranslationService.getMessage("showAllTaskShowTaskByStatusInProgress"));
+    }
+
+    private void showTasksList(List<Task> tasks, String status) {
+        if (tasks != null && tasks.size() != 0) {
+            System.out.println(status);
+
+            for (Task task : tasks) {
+                System.out.println(task);
+            }
         }
     }
 }

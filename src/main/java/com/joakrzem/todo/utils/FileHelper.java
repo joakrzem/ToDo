@@ -1,10 +1,12 @@
 package com.joakrzem.todo.utils;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class FileHelper {
@@ -32,6 +34,11 @@ public class FileHelper {
         return Arrays.stream(file.split("\n"))
                 .map(line -> line.replace("\n", "").replace("\r", ""))
                 .collect(Collectors.toList());
+    }
+
+    public static List<String> getFileNamesInDirectory(String folderName) {
+        String path = Objects.requireNonNull(FileHelper.class.getClassLoader().getResource(folderName)).getPath();
+        return Arrays.stream(Objects.requireNonNull(new File(path).listFiles())).map(File::getName).collect(Collectors.toList());
     }
 
 }

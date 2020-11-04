@@ -29,7 +29,6 @@ public class SplitTasksByStatus {
                 inProgressTasks.add(task);
             }
         }
-
         return new TasksByStatus(activeTasks, finishedTasks, inProgressTasks, cancelledTasks);
     }
 }
