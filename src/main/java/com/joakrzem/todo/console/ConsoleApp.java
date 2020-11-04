@@ -17,7 +17,7 @@ public class ConsoleApp {
 
     public void printMenu() {
         actionService.printMenu();
-        System.out.println("0. " + messageTranslationService.getMessage("consoleAppExit"));
+        System.out.println("0. " + messageTranslationService.getMessage("appExit"));
     }
 
     public void processMenuChoice(String choice) {

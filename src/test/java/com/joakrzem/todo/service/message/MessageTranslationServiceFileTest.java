@@ -56,17 +56,6 @@ class MessageTranslationServiceFileTest {
     }
 
     @Test
-    void getAvailableLanguages_ShouldReturnListOfTwoAvailableLanguages() {
-
-        //When
-        List<String> listOfAvailableLanguages = messageTranslationService.getAvailableLanguages();
-
-        //Then
-        assertEquals(2, listOfAvailableLanguages.size());
-
-    }
-
-    @Test
     void getAvailableLanguages_ShouldReturnEn_ENAndPl_PL() {
 
         //When
@@ -75,6 +64,6 @@ class MessageTranslationServiceFileTest {
         //Then
         assertEquals("en_US", listOfAvailableLanguages.get(0));
         assertEquals("pl_PL", listOfAvailableLanguages.get(1));
-
+        assertEquals(2, listOfAvailableLanguages.size());
     }
 }

@@ -57,7 +57,7 @@ actionSetLanguageExecuteToPolish: Zmieniono język na pl_PL
 consoleAppExit: Wyjście
 
 showAllTaskShowTaskByStatusActive: Aktywne
-showAllTaskShowTaskByStatusCanclled: Odwołane
+showAllTaskShowTaskByStatusCanclled: Anulowane
 showAllTaskShowTaskByStatusInProgress: W trakcie
 showAllTaskShowTaskByStatusFinished: Ukończone
 

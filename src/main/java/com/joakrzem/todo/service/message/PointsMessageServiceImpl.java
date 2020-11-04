@@ -12,21 +12,21 @@ public class PointsMessageServiceImpl implements PointsMessageService {
     @Override
     public String getMessage(int points) {
         if (points >= 201) {
-            return messageTranslationService.getMessage("pointsMessageServiceImplMoreThan200Points");
+            return messageTranslationService.getMessage("moreThan200PointsMessage");
         }
 
         if (points >= 101) {
-            return messageTranslationService.getMessage("pointsMessageServiceImplMoreThan100Points");
+            return messageTranslationService.getMessage("moreThan100PointsMessage");
         }
 
         if (points >= 51) {
-            return messageTranslationService.getMessage("pointsMessageServiceImplMoreThan50Points");
+            return messageTranslationService.getMessage("moreThan50PointsMessage");
         }
 
         if (points >= 21) {
-            return messageTranslationService.getMessage("pointsMessageServiceImplMoreThan20Points");
+            return messageTranslationService.getMessage("moreThan20PointsMessage");
         }
 
-        return messageTranslationService.getMessage("pointsMessageServiceImplLessThan20Points");
+        return messageTranslationService.getMessage("lessThan20PointsMessage");
     }
 }

@@ -51,25 +51,25 @@ public class ActionModify implements Action {
             System.out.println(messageTranslationService.getMessage("modifyCantModify"));
             return null;
         }
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleName"));
+        System.out.print(messageTranslationService.getMessage("name"));
         String name = scanner.nextLine();
         if (!name.equals("")) {
             toModify.setName(name);
         }
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleCategory"));
+        System.out.print(messageTranslationService.getMessage("category"));
         String category = scanner.nextLine();
         if (!category.equals("")) {
             toModify.setCategory(category);
         }
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleDescription"));
+        System.out.print(messageTranslationService.getMessage("description"));
         String description = scanner.nextLine();
         if (!description.equals("")) {
             toModify.setDescription(description);
         }
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleEndDate"));
+        System.out.print(messageTranslationService.getMessage("endDate"));
         String date = scanner.nextLine();
         if (!date.equals("")) {
             LocalDateTime dateToSet;
@@ -83,7 +83,7 @@ public class ActionModify implements Action {
             toModify.setEndDate(dateToSet);
         }
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsolePriority"));
+        System.out.print(messageTranslationService.getMessage("priority"));
         String priority = scanner.nextLine();
         if (!priority.equals("")) {
             Priority priorityToSet;
@@ -96,7 +96,7 @@ public class ActionModify implements Action {
             toModify.setPriority(priorityToSet);
         }
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsolePoints"));
+        System.out.print(messageTranslationService.getMessage("points"));
         String points = scanner.nextLine();
         if (!points.equals("")) {
             int pointsToSet;
@@ -112,7 +112,7 @@ public class ActionModify implements Action {
 
         toDoService.modify(toModify, id);
 
-        System.out.println(messageTranslationService.getMessage("removeTaskSuccessfullyRemoved"));
+        System.out.println(messageTranslationService.getMessage("modifySuccessfullyModified"));
         return toModify;
     }
 }

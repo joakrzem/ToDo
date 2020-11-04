@@ -1,11 +1,11 @@
 descriptionAddTask: Add new task
-getTaskFromConsoleName: "name:"
-getTaskFromConsoleCategory: "category: "
-getTaskFromConsoleDescription: "description: "
-getTaskFromConsoleEndDate: "endDate: "
-getTaskFromConsolePriority: "priority: "
-getTaskFromConsolePoints: "points: "
-getTaskFromConsoleID: "id: "
+name: "name:"
+category: "category: "
+description: "description: "
+endDate: "endDate: "
+priority: "priority: "
+points: "points: "
+id: "id: "
 
 descriptionFinishTask: Finish task
 finishTaskWhichTask: Which task did you finish?
@@ -40,7 +40,7 @@ removeTaskSuccessfullRemoved: Successfully removed
 printMenuWhatToDo: What do you want to do?
 executeActionActionDoesntExist: Action which has this number doesn't exist
 descriptionShowAllTask: Show all task
-executeAdSomeTask: There are no tasks. Add some
+addSomeTask: There are no tasks. Add some
 executePriorityCorrectly: Please enter priority correctly
 
 showTaskByStatusShowActiveTasks: Active tasks
@@ -54,15 +54,15 @@ actionSetLanguagePolish: 2.pl_PL
 actionSetLanguageExecuteToEnglish: Change language to en_US
 actionSetLanguageExecuteToPolish: Change language to pl_PL
 
-consoleAppExit: Exit
+appExit: Exit
 
 showAllTaskShowTaskByStatusActive: Active
 showAllTaskShowTaskByStatusCanclled: Cancelled
 showAllTaskShowTaskByStatusInProgress: In progress
 showAllTaskShowTaskByStatusFinished: Fnished
 
-pointsMessageServiceImplMoreThan200Points: You are really task master!
-pointsMessageServiceImplMoreThan100Points: Good luck, keep going
-pointsMessageServiceImplMoreThan50Points: Nice
-pointsMessageServiceImplMoreThan20Points: You are starting rolling
-pointsMessageServiceImplLessThan20Points: Don't give up
+moreThan200PointsMessage: You are really task master!
+moreThan100PointsMessage: Good luck, keep going
+moreThan50PointsMessage: Nice
+moreThan20PointsMessage: You are starting rolling
+lessThan20PointsMessage: Don't give up

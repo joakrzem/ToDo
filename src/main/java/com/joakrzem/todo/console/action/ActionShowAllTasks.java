@@ -26,7 +26,6 @@ public class ActionShowAllTasks implements Action {
 
     @Override
     public String description() {
-
         return messageTranslationService.getMessage("descriptionShowAllTask");
     }
 
@@ -34,7 +33,7 @@ public class ActionShowAllTasks implements Action {
     public void execute() {
         List<Task> allTask = getAllTasks();
         if (allTask.size() == 0) {
-            System.out.println(messageTranslationService.getMessage("executeAdSomeTask"));
+            System.out.println(messageTranslationService.getMessage("addSomeTask"));
         } else {
             TasksByStatus tasksByStatus = splitTasksByStatus.split(allTask);
 

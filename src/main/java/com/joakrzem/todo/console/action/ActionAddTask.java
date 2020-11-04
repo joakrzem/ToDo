@@ -39,29 +39,29 @@ public class ActionAddTask implements Action {
 
     private Task getTaskFromConsole() {
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleName"));
+        System.out.print(messageTranslationService.getMessage("name"));
         String name = scanner.nextLine();
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleCategory"));
+        System.out.print(messageTranslationService.getMessage("category"));
         String category = scanner.nextLine();
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleDescription"));
+        System.out.print(messageTranslationService.getMessage("description"));
         String description = scanner.nextLine();
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleEndDate"));
+        System.out.print(messageTranslationService.getMessage("endDate"));
         LocalDateTime endDate;
         endDate = consoleAppUtils.getLocalDateTimeFromConsole();
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsolePriority"));
+        System.out.print(messageTranslationService.getMessage("priority"));
         Priority priority;
 
         priority = consoleAppUtils.getPriorityFromConsole();
 
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsolePoints"));
+        System.out.print(messageTranslationService.getMessage("points"));
         int points = consoleAppUtils.getIntFromConsole(messageTranslationService.getMessage("modifyPointCorrectly"));
 
-        System.out.print(messageTranslationService.getMessage("getTaskFromConsoleID"));
+        System.out.print(messageTranslationService.getMessage("id"));
 
         int id = Math.abs(random.nextInt());
 

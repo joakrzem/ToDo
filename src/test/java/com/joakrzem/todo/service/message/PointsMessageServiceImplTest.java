@@ -18,11 +18,11 @@ class PointsMessageServiceImplTest {
     public void setUp() {
         pointMessageService = new PointsMessageServiceImpl(messageTranslationService);
 
-        when(messageTranslationService.getMessage("pointsMessageServiceImplMoreThan200Points")).thenReturn("You are really task master!");
-        when(messageTranslationService.getMessage("pointsMessageServiceImplMoreThan100Points")).thenReturn("Good luck, keep going!");
-        when(messageTranslationService.getMessage("pointsMessageServiceImplMoreThan50Points")).thenReturn("Nice");
-        when(messageTranslationService.getMessage("pointsMessageServiceImplMoreThan20Points")).thenReturn("You are starting rolling");
-        when(messageTranslationService.getMessage("pointsMessageServiceImplLessThan20Points")).thenReturn("Don't give up!");
+        when(messageTranslationService.getMessage("moreThan200PointsMessage")).thenReturn("You are really task master!");
+        when(messageTranslationService.getMessage("moreThan100PointsMessage")).thenReturn("Good luck, keep going!");
+        when(messageTranslationService.getMessage("moreThan50PointsMessage")).thenReturn("Nice");
+        when(messageTranslationService.getMessage("moreThan20PointsMessage")).thenReturn("You are starting rolling");
+        when(messageTranslationService.getMessage("lessThan20PointsMessage")).thenReturn("Don't give up!");
 
     }
 
