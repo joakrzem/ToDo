@@ -92,7 +92,7 @@ class SplitTasksByStatusTest {
     }
 
     @Test
-    void split_ShouldHaveFewTaksDifferentStatus() {
+    void split_ShouldHaveFewTasksDifferentStatus() {
         //Given
         task1.setStatus(Status.FINISHED);
         task3.setStatus(Status.CANCELLED);

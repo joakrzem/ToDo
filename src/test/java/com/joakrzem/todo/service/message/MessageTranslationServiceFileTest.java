@@ -62,8 +62,9 @@ class MessageTranslationServiceFileTest {
         List<String> listOfAvailableLanguages = messageTranslationService.getAvailableLanguages();
 
         //Then
+        assertEquals(2, listOfAvailableLanguages.size());
         assertEquals("en_US", listOfAvailableLanguages.get(0));
         assertEquals("pl_PL", listOfAvailableLanguages.get(1));
-        assertEquals(2, listOfAvailableLanguages.size());
+
     }
 }
