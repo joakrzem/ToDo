@@ -32,7 +32,7 @@ modifyDateCorrectly: Please enter end date correctly
 modifyPointCorrectly: Please enter points correctly
 modifySuccessfullyModified: Successfully modified
 
-descritpionRemoveTask: Remove task
+descriptionRemoveTask: Remove task
 removeTaskWhich: Which tasks do you want to remove?
 removeTaskIdCorrectly: Please enter id correctly
 removeTaskSuccessfullRemoved: Successfully removed

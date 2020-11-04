@@ -22,7 +22,7 @@ public class ActionRemoveTask implements Action {
 
     @Override
     public String description() {
-        return messageTranslationService.getMessage("descritpionRemoveTask");
+        return messageTranslationService.getMessage("descriptionRemoveTask");
     }
 
     @Override

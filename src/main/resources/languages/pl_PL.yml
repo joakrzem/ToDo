@@ -1,11 +1,11 @@
 descriptionAddTask: Dodaj nowe zadanie
-getTaskFromConsoleName: "nazwa: "
-getTaskFromConsoleCategory: "kategoria: "
-getTaskFromConsoleDescription: "opis: "
-getTaskFromConsoleEndDate: "data zakończenia: "
-getTaskFromConsolePriority: "priorytet: "
-getTaskFromConsolePoints: "punkty: "
-getTaskFromConsoleID: "numer: "
+name: "nazwa: "
+category: "kategoria: "
+description: "opis: "
+endDate: "data zakończenia: "
+priority: "priorytet: "
+points: "punkty: "
+id: "numer: "
 
 descriptionFinishTask: Zakończ zadanie
 finishTaskWhichTask: Które zadanie ukończyłeś/łaś?
@@ -30,17 +30,17 @@ modifyWhichTask: Które zadanie chcesz zmodyfikować?
 modifyCantModify: Nie możesz modyfikować ukończonego zadania
 modifyDateCorrectly: Proszę wpisać końcową datę zadania poprawnie
 modifyPointCorrectly: Proszę wpisać ilość punktów zadania poprawnie
-modifySuccessfullyModified: Poprawnie zmodyfikowany
+modifySuccessfullyModified: Poprawnie zmodyfikowane
 
-descritpionRemoveTask: Usuń zadanie
+descriptionRemoveTask: Usuń zadanie
 removeTaskWhich: Które zadanie chcesz usunąć?
 removeTaskIdCorrectly: Proszę wpisać numer poprawnie
-removeTaskSuccessfullRemoved: Poprawnie usunięty
+removeTaskSuccessfullRemoved: Poprawnie usunięte
 
 printMenuWhatToDo: Co chcesz zrobić?
 executeActionActionDoesntExist: Akcja o tym numerze nie istnieje
 descriptionShowAllTask: Pokaż wszystkie zadania
-executeAdSomeTask: Nie ma żadnych zadań. Dodaj jakieś
+addSomeTask: Nie ma żadnych zadań. Dodaj jakieś
 executePriorityCorrectly: Proszę wpisz priorytet poprawnie
 
 showTaskByStatusShowActiveTasks: Aktywne zadania
@@ -54,15 +54,15 @@ actionSetLanguagePolish: 2.pl_PL
 actionSetLanguageExecuteToEnglish: Change language to en_US
 actionSetLanguageExecuteToPolish: Zmieniono język na pl_PL
 
-consoleAppExit: Wyjście
+appExit: Wyjście
 
 showAllTaskShowTaskByStatusActive: Aktywne
 showAllTaskShowTaskByStatusCanclled: Anulowane
 showAllTaskShowTaskByStatusInProgress: W trakcie
 showAllTaskShowTaskByStatusFinished: Ukończone
 
-pointsMessageServiceImplMoreThan200Points: Jesteś prawdziwym mistrzem !
-pointsMessageServiceImplMoreThan100Points: Powodzenia, kontynuuj
-pointsMessageServiceImplMoreThan50Points: Fajnie
-pointsMessageServiceImplMoreThan20Points: Zaczynasz działać
-pointsMessageServiceImplLessThan20Points: Nie poddawaj się
+moreThan200Points: Jesteś prawdziwym mistrzem !
+moreThan100Points: Powodzenia, kontynuuj
+moreThan50Points: Fajnie
+moreThan20Points: Zaczynasz działać
+lessThan20Points: Nie poddawaj się
